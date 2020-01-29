@@ -64,7 +64,7 @@ def zipdir(path, repo, branch):
         # ziph is zipfile handle
         for root, dirs, files in os.walk(path):
             # files whose names are in gitignore are not added 
-            ziph.write(os.path.join(root, file_) for file_ in files if  file_ in gitignore)
+            ziph.write(os.path.join(root, file_) for file_ in files if not file_  in gitignore)
 
 
 def create_repo(name):
